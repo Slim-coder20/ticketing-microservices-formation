@@ -1,0 +1,19 @@
+apiVersion: skaffold/v4beta14
+kind: Config
+manifests:
+  rawYaml:
+    - ./infra/k8s/*.yaml
+deploy:
+  kubectl: {}
+build:
+  local:
+    push: false
+  artifacts:
+    - image: slimabida21/auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
