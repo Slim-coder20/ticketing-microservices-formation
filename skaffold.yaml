@@ -6,10 +6,12 @@ manifests:
 deploy:
   kubectl: {}
 build:
-  local:
-    push: false
+  # local:
+  #   push: false
+  googleCloudBuild:
+    projectId: ticketing-dev-515514
   artifacts:
-    - image: slimabida21/auth
+    - image: us-east4-docker.pkg.dev/ticketing-dev-515514/ticketing/auth
       context: auth
       docker:
         dockerfile: Dockerfile

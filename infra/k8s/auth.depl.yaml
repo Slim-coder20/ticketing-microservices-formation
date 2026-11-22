@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: slimabida21/auth
+          image: us-east4-docker.pkg.dev/ticketing-dev-515514/ticketing/auth
 ---
 apiVersion: v1
 kind: Service 
